@@ -28,3 +28,7 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: ${{ inputs.prompt }}
+
+      - name: Show Claude execution output
+        if: always()
+        run: cat /home/runner/work/_temp/claude-execution-output.json
